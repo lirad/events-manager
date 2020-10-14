@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :event_atendees
+  resources :events
   
-  resources :events do
-    match '/join', to: 'events#join_event', via: :post, on: :collection
+  resources :event_atendees do
+    match '/join', to: 'event_atendees#join_event', via: :post, on: :collection
   end
 
   devise_for :users, :controllers => {registrations: 'registrations'}

@@ -12,6 +12,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @atendees = @event.event_atendees
   end
 
   # GET /events/new
@@ -52,10 +53,6 @@ class EventsController < ApplicationController
       end
     end
   end
-
-  def join_event(event_id)
-    current_user.event_atendees.build(event_id: event_id)
-  end  
 
   # DELETE /events/1
   # DELETE /events/1.json

@@ -1,6 +1,7 @@
 class EventAtendeesController < ApplicationController
   before_action :set_event_atendee, only: [:show, :edit, :update, :destroy]
 
+
   # GET /event_atendees
   # GET /event_atendees.json
   def index
@@ -20,6 +21,15 @@ class EventAtendeesController < ApplicationController
   # GET /event_atendees/1/edit
   def edit
   end
+  
+  def join_event
+    event = EventAtendee.create(event_id: params[:format], atendee_id: current_user[:id]) 
+    event.save
+    flash[:notice] = "Thank you for joining our event!"
+    redirect_to event_path(params[:format])
+
+    
+  end  
 
   # POST /event_atendees
   # POST /event_atendees.json
