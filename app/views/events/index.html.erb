@@ -2,30 +2,33 @@
 
 <h1>Events</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="uk-grid" >
     <% @events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= event.description %></td>
-        <td><%= event.date %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="uk-width-1-2">
+    <div class="uk-card uk-card-default uk-width-3-6 ">
+    <div class="uk-card-header">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+            <div class="uk-width-auto">
+                <span uk-icon="bookmark"></span>
+            </div>
+            <div class="uk-width-expand">
+                <h3 class="uk-card-title uk-margin-remove-bottom"><%= event.name %></h3>
+                <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00"><%= event.date %></time></p>
+            </div>
+        </div>
+    </div>
+    <div class="uk-card-body">
+        <p><%= event.description %></p>
+    </div>
+    <div class="uk-card-footer">
+        <a href="#" class="uk-button uk-button-primary ">Join Event</a>
+    </div>
+</div>
+</div>
+      
     <% end %>
-  </tbody>
-</table>
+</div>
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
+<%= link_to "New Event", new_event_path %>

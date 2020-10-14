@@ -5,8 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+    <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
     <!-- UIkit CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/css/uikit.min.css" />
 
@@ -16,6 +16,47 @@
   </head>
 
   <body>
-    <%= yield %>
+  
+     <% if flash[:notice] %>
+    <div class="uk-alert-success uk-margin-remove-vertical" uk-alert>
+      <a class="uk-alert-close" uk-close></a>
+      <p><%= notice %></p>
+    </div>
+  <% end %>
+   <% if flash[:alert] %>
+    <div class="uk-alert-danger uk-margin-remove-vertical" uk-alert>
+      <a class="uk-alert-close" uk-close></a>
+      <p><%= notice %></p>
+    </div>
+  <% end %>
+  
+  <nav class="uk-navbar-container uk-margin uk-margin-remove-top" uk-navbar>
+    <div class="uk-navbar-left">
+
+        <a class="uk-navbar-item uk-logo" href="#">Events Manager</a>
+
+        <ul class="uk-navbar-nav">
+            <li>
+                <a href="#">
+                    <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="uk-navbar-right">
+    
+        <div class="uk-navbar-item">
+            <%= button_to 'Sign Up', new_user_registration_path, class:"uk-button uk-button-primary uk-margin-right", method: :get %>
+            <%= button_to 'Sign In', new_user_session_path, class:"uk-button uk-button-default uk-margin-right", method: :get %>
+            <%= button_to 'Logout', destroy_user_session_path, class:"uk-button uk-button-primary", method: :delete %>
+            
+        </div>
+    </div>
+</nav>
+<div class="uk-container">
+      <%= yield %>
+</div>
+
   </body>
 </html>
