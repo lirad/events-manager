@@ -1,31 +1,32 @@
-<p id="notice"><%= notice %></p>
+
 
 <h1>Events</h1>
 
-<div class="uk-grid" >
+<div class="uk-grid-column-medium uk-grid-row-medium uk-child-width-1-3@s  uk-text-center uk-grid" >
     <% @events.each do |event| %>
-    <div class="uk-width-1-2">
-    <div class="uk-card uk-card-default uk-width-3-6 ">
-    <div class="uk-card-header">
-        <div class="uk-grid-small uk-flex-middle" uk-grid>
-            <div class="uk-width-auto">
-                <span uk-icon="bookmark"></span>
-            </div>
-            <div class="uk-width-expand">
-                <h3 class="uk-card-title uk-margin-remove-bottom"><%= event.name %></h3>
-                <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00"><%= event.date %></time></p>
-            </div>
-        </div>
+    <div>
+    <div class="uk-child-width-expand@s uk-card uk-card-default">
+      <div class="uk-card-header uk-text-left">
+          <div class="uk-grid-small uk-flex-middle" uk-grid>
+              <div class="uk-width-auto">
+                  <span uk-icon="bookmark"></span>
+              </div>
+              <div class="uk-width-expand">
+                  <h3 class="uk-card-title uk-margin-remove-bottom"><%= event.name %></h3>
+                  <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00"><%= event.date %></time></p>
+              </div>
+          </div>
+      </div>
+      <div class="uk-card-body">
+          <p><%= event.description %></p>
+      </div>
+      <div class="uk-card-footer">
+          <%= button_to "View Event", event, class: "uk-button uk-button-primary",  method: :get %>
+          
+          
+      </div>
     </div>
-    <div class="uk-card-body">
-        <p><%= event.description %></p>
     </div>
-    <div class="uk-card-footer">
-        <a href="#" class="uk-button uk-button-primary ">Join Event</a>
-    </div>
-</div>
-</div>
-      
     <% end %>
 </div>
 

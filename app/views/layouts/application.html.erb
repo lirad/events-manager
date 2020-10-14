@@ -47,9 +47,12 @@
     <div class="uk-navbar-right">
     
         <div class="uk-navbar-item">
-            <%= button_to 'Sign Up', new_user_registration_path, class:"uk-button uk-button-primary uk-margin-right", method: :get %>
-            <%= button_to 'Sign In', new_user_session_path, class:"uk-button uk-button-default uk-margin-right", method: :get %>
-            <%= button_to 'Logout', destroy_user_session_path, class:"uk-button uk-button-primary", method: :delete %>
+        <% if !user_signed_in? %>
+            <%= button_to "Sign Up", new_user_registration_path, class: "uk-button uk-button-primary uk-margin-right", method: :get %>
+            <%= button_to "Sign In", new_user_session_path, class: "uk-button uk-button-default uk-margin-right", method: :get %>
+            <% else %>
+            <%= button_to "Logout", destroy_user_session_path, class: "uk-button uk-button-primary", method: :delete %>
+        <% end %>
             
         </div>
     </div>
