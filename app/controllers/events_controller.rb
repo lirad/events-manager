@@ -12,7 +12,10 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    
     @atendees = @event.event_atendees
+    @user_registered =  @atendees.where(:atendee_id => current_user.id).exists?
+
   end
 
   # GET /events/new

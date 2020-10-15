@@ -11,9 +11,11 @@
 
 
     <div class="uk-grid-small uk-child-width-auto" uk-grid>
-        
-            <%= button_to 'Join Event', join_event_atendees_path(@event), class:"uk-button uk-button-primary"%>
-        
+      <% if @user_registered%>  
+      <button class="uk-button uk-button-primary" disabled>  You are already registred for this event </button>
+      <% else %>
+      <%= button_to 'Join Event', join_event_atendees_path(@event), class:"uk-button uk-button-primary"%>
+      <% end %>  
         
     </div>
 

@@ -27,8 +27,6 @@ class EventAtendeesController < ApplicationController
     event.save
     flash[:notice] = "Thank you for joining our event!"
     redirect_to event_path(params[:format])
-
-    
   end  
 
   # POST /event_atendees

@@ -1,0 +1,13 @@
+
+
+<h1 class="uk-heading-line"><span><%= @user.name %></span></h1>
+
+<h1 class="uk-heading-line"><span>Events Attending</span></h1>
+
+  <ul class="uk-list uk-list-striped">
+     <% @events.each do |a| %>
+      <li> <%= a.event.name %> </li>
+    <% end %>
+</ul>
+  
+
