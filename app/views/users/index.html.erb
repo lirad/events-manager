@@ -6,7 +6,16 @@
 
   <ul class="uk-list uk-list-striped">
      <% @events.each do |a| %>
-      <li> <%= a.event.name %> </li>
+      <li> 
+      <%= a.event.name %> 
+           <%if a.event.date < Time.now.beginning_of_day %>
+         <span class="uk-text-danger"> Past on</span>
+         <%= format_date a.event.date %>
+        <%else%>
+         <span class="uk-text-primary">Future on </span>
+         <%= format_date a.event.date %>
+        <% end %>
+      </li>
     <% end %>
 </ul>
   

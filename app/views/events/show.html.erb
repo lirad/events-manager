@@ -4,19 +4,22 @@
 
 
 <article class="uk-article">
-    <p class="uk-article-meta">Created by <a href="#"><%= @event.user.name%> </a> on <%= @event.created_at%>.
+    <p class="uk-article-meta">Created by <a href="#"><%= @event.user.name %> </a> on <%= @event.created_at %>.
 
-    <p class="uk-text-lead"><%= @event.description%></p>
+    <p class="uk-text-lead"><%= @event.description %></p>
 
 
 
     <div class="uk-grid-small uk-child-width-auto" uk-grid>
-      <% if @user_registered%>  
+      <% if @user_registered == true && @event.date >= Time.now %>  
       <button class="uk-button uk-button-primary" disabled>  You are already registred for this event </button>
+      <% elsif @user_registered == "Not registered" && @event.date >= Time.now %>
+      <button class="uk-button uk-button-primary" disabled>  Sing In or Sing up to register to an event </button>
+      <% elsif @event.date < Time.now %>
+      <button class="uk-button uk-button-danger" disabled>Event ended</button>
       <% else %>
-      <%= button_to 'Join Event', join_event_atendees_path(@event), class:"uk-button uk-button-primary"%>
+      <%= button_to "Join Event", join_event_atendees_path(@event), class: "uk-button uk-button-primary" %>
       <% end %>  
-        
     </div>
 
 </article>
@@ -31,5 +34,5 @@
   
 
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to "Edit", edit_event_path(@event) %> |
+<%= link_to "Back", events_path %>

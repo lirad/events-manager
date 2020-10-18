@@ -6,7 +6,11 @@
 
   <ul class="uk-list uk-list-striped">
      <% @events.each do |a| %>
-      <li> <%= a.event.name %> </li>
+      <li> 
+        <%= a.event.name %> 
+        <%= a.event.date %> 
+   
+      </li>
     <% end %>
 </ul>
   
