@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "SingUpAndCreateUsers", type: :feature do
-
+RSpec.feature 'SingUpAndCreateUsers', type: :feature do
   scenario 'they can sign up and create events' do
     visit new_user_registration_path
     fill_in 'user_name', with: 'Diego Lira'
@@ -21,5 +20,4 @@ RSpec.feature "SingUpAndCreateUsers", type: :feature do
     expect(page).to have_content('Event Name Test')
     expect(page).to have_content('Event Description Teste')
   end
-
 end

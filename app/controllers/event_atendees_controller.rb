@@ -1,6 +1,5 @@
 class EventAtendeesController < ApplicationController
-  before_action :set_event_atendee, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_event_atendee, only: %i[show edit update destroy]
 
   # GET /event_atendees
   # GET /event_atendees.json
@@ -10,8 +9,7 @@ class EventAtendeesController < ApplicationController
 
   # GET /event_atendees/1
   # GET /event_atendees/1.json
-  def show
-  end
+  def show; end
 
   # GET /event_atendees/new
   def new
@@ -19,15 +17,14 @@ class EventAtendeesController < ApplicationController
   end
 
   # GET /event_atendees/1/edit
-  def edit
-  end
-  
+  def edit; end
+
   def join_event
-    event = EventAtendee.create(event_id: params[:format], atendee_id: current_user[:id]) 
+    event = EventAtendee.create(event_id: params[:format], atendee_id: current_user[:id])
     event.save
-    flash[:notice] = "Thank you for joining our event!"
+    flash[:notice] = 'Thank you for joining our event!'
     redirect_to event_path(params[:format])
-  end  
+  end
 
   # POST /event_atendees
   # POST /event_atendees.json
@@ -70,13 +67,14 @@ class EventAtendeesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_event_atendee
-      @event_atendee = EventAtendee.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def event_atendee_params
-      params.require(:event_atendee).permit(:event_id, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_event_atendee
+    @event_atendee = EventAtendee.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def event_atendee_params
+    params.require(:event_atendee).permit(:event_id, :user_id)
+  end
 end
