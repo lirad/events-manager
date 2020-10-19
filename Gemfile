@@ -45,7 +45,6 @@ group :development do
   gem 'better_errors', '~> 2.8', '>= 2.8.3'
   gem 'guard', '~> 2.16', '>= 2.16.2'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
-  gem 'rspec-rails', '~> 4.0.1'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'sqlite3', '~> 1.4'
