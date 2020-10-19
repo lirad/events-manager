@@ -1,4 +1,4 @@
-# Reddit App ![img](./app/assets/images/reddit-2.svg)
+# Events Manager
 ![Microverse](https://img.shields.io/badge/-Microverse-6F23FF?style=for-the-badge)
 
 > This project consists in a event manager platform, where user can Create and Join events. The motivation is to study and apply database relationship concepts while building this application.
