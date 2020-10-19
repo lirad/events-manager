@@ -1,55 +1,61 @@
- # Members-only
+# Reddit App ![img](./app/assets/images/reddit-2.svg)
+![Microverse](https://img.shields.io/badge/-Microverse-6F23FF?style=for-the-badge)
 
-## About <a name = "About"></a>
-This project creates a secret social media platform where only authorized members can see who posted a secret story.
-
-## Screenshots 
+> This project consists in a event manager platform, where user can Create and Join events. The motivation is to study and apply database relationship concepts while building this application.
 
 ![image](screenshot.png)
 
-## 🔧 Built with<a name = "with"></a>
+## Live Demo
 
-- Ruby on Rails and Bulma
+🔗 [Live Demo Link](https://events-manager-microverse.herokuapp.com/)
 
-## 🔨 Setup    <a name = "setup"></a>
-- Clone this project from github using
-- <code>$ git clone https://github.com/lirad/members-only-microverse.git</code>
-- <code>cd members-only-microverse</code>
-- <code>$ bundle install</code>
-- <code>$ rails server</code>
+## Description
 
-## ✒️ Author <a name = "author"></a>
+I have built this project to function a working Reddit app which lets you create users, posts and comments which are unique to the users. Please follow below to get started.
 
-👤 **Diego Lira**
+## Built With 🛠
+```
+- Ruby: 2.6.3
+- Ruby on Rails: 6.0.3.4
+- Devise for authentication
+- UIKit CSS
+- Postgres
+- VS Code
+```
 
-- Github: [@lirad](https://github.com/lirad)
-- Twitter: [@lirad](https://twitter.com/lirad)
-- Linkedin: [Diego de Araujo Lira](https://www.linkedin.com/in/diegoalira/)
+## Install ⏳
 
-## 🤝 Contributing
+> Follow these steps below to get my application working
+
+1. - [ ] Git clone or download this repo to your machine
+2. - [ ] Inside the `events-manager` folder run `bundle install`
+3. - [ ] Run `rails server`
+4. - [ ] Visit `localhost:3000` to see the application in action
+
+## Testing ⏳
+
+> Follow these steps below to get my application working
+
+Run `rspec` to run the tests
+
+## Authors
+
+### 👨‍💻 Diego Lira
+[![GitHub](https://img.shields.io/badge/-GitHub-000?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/lirad) <br>
+[![LINKEDIN](https://img.shields.io/badge/-LINKEDIN-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/diegoalira/) <br>
+[![EMAIL](https://img.shields.io/badge/-EMAIL-D14836?style=for-the-badge&logo=Mail.Ru&logoColor=white)](mailto:diegoalira@gmail.com) <br>
+
+
+### 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the fork this repo and create pull request if you want to make changes.
+Feel free to check the [issues page](enter issues url here).
 
-
-## MIT Licence <a name = "licence"></a>  :registered:
-
-MIT License
-
-Copyright (c) 2020
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so.
-
-## 👍 Show your support
+### Show your support
 
 Give a ⭐️ if you like this project!
 
-## :thumbsup: Acknowledgements
-- Microverse  
-- ThOdinProject 
+### License
+
+![Cocoapods](https://img.shields.io/cocoapods/l/AFNetworking?color=red&style=for-the-badge)
