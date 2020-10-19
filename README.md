@@ -3,6 +3,8 @@
 
 > This project consists in a event manager platform, where user can Create and Join events. The motivation is to study and apply database relationship concepts while building this application.
 
+## Screenshot
+
 ![image](screenshot.png)
 
 ## Live Demo
