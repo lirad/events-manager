@@ -11,11 +11,11 @@
 
 
     <div class="uk-grid-small uk-child-width-auto" uk-grid>
-      <% if @user_registered == true && @event.date >= Time.now %>  
+      <% if joinable_event(@user_registered, @event) == 1  %>  
       <button class="uk-button uk-button-primary" disabled>  You are already registred for this event </button>
-      <% elsif @user_registered == "Not registered" && @event.date >= Time.now %>
+      <% elsif joinable_event(@user_registered, @event) == 2 %>
       <button class="uk-button uk-button-primary" disabled>  Sing In or Sing up to register to an event </button>
-      <% elsif @event.date < Time.now %>
+      <% elsif joinable_event(@user_registered, @event) == 3 %>
       <button class="uk-button uk-button-danger" disabled>Event ended</button>
       <% else %>
       <%= button_to "Join Event", join_event_atendees_path(@event), class: "uk-button uk-button-primary" %>
