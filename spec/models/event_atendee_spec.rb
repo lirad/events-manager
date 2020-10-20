@@ -9,11 +9,11 @@ RSpec.describe EventAtendee, type: :model do
 
   context 'can have an attendee' do
     it 'can be created' do
-      expect(EventAtendee.first.user).to eq(@user)
+      expect(@user.attended_events.first.user).to eq(@user)
     end
 
     it 'can have events that will be attended to' do
-      expect(EventAtendee.first.event).to eq(@event_future)
+      expect(Event.first).to eq(@event_future)
     end
   end
 end
