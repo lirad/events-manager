@@ -15,11 +15,9 @@ class EventsController < ApplicationController
     @atendees = @event.attendees
     if current_user
       user_id = current_user.id
-      @user_registered = if current_user
-          @atendees.where(id: user_id).exists?
-        else
-          "Not registered"
-        end
+      @user_registered = @atendees.where(id: user_id).exists?
+    else 
+      @user_registered = "Not registered"
     end
   end
 
