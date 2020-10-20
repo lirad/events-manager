@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @user = current_user
-    @events = @user.event_atendees
+    @events = @user.attended_events
   end
 
   def show; end

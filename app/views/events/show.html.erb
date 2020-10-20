@@ -4,7 +4,7 @@
 
 
 <article class="uk-article">
-    <p class="uk-article-meta">Created by <a href="#"><%= @event.user.name %> </a> on <%= @event.created_at %>.
+    <p class="uk-article-meta">Created by <a href="#"><%= @event.user.name %> </a> on <%= format_date @event.created_at %>.
 
     <p class="uk-text-lead"><%= @event.description %></p>
 
@@ -28,7 +28,7 @@
 
   <ul class="uk-list uk-list-striped">
      <% @atendees.each do |a| %>
-      <li> <%= a.user.name %> </li>
+      <li> <%= a.name %> </li>
     <% end %>
 </ul>
   

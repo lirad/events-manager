@@ -11,9 +11,10 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    @atendees = @event.event_atendees
+    user_id = current_user.id
+    @atendees = @event.attendees
     @user_registered = if current_user
-                         @atendees.where(atendee_id: current_user.id).exists?
+                         @atendees.where(id: user_id).exists?
                        else
                          'Not registered'
                        end
@@ -22,6 +23,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = current_user.events.build
+    @event
   end
 
   # GET /events/1/edit
@@ -76,6 +78,6 @@ class EventsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def event_params
-    params.require(:event).permit(:name, :description, :date)
+    params.require(:event).permit(:name, :description, :date, :creator_id)
   end
 end

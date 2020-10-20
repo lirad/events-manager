@@ -7,13 +7,13 @@
   <ul class="uk-list uk-list-striped">
      <% @events.each do |a| %>
       <li> 
-      <%= a.event.name %> 
-           <%if a.event.date < Time.now.beginning_of_day %>
+      <%= a.name %> 
+           <%if a.date < Time.now.beginning_of_day %>
          <span class="uk-text-danger"> Past on</span>
-         <%= format_date a.event.date %>
+         <%= format_date a.date %>
         <%else%>
          <span class="uk-text-primary">Future on </span>
-         <%= format_date a.event.date %>
+         <%= format_date a.date %>
         <% end %>
       </li>
     <% end %>
