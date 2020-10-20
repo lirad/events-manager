@@ -1,0 +1,54 @@
+
+
+<h1 class="uk-heading-line"><span><%= @user.name %></span></h1>
+
+<h1 class="uk-heading-line"><span>Events Attending</span></h1>
+
+<ul class="uk-subnav uk-subnav-pill" uk-switcher>
+    <li><a href="#">Future Events</a></li>
+    <li><a href="#">Past Events</a></li>
+    <li><a href="#">Created Events</a></li>
+</ul>
+
+
+  <ul class=" uk-switcher">
+     <li>
+     <ul class="uk-list uk-list-striped  ">
+          <% @future_events_user.each do |e| %>
+            <li>
+            <%= e.name %> 
+            <span class="uk-text-primary">Future on </span>
+            <%= format_date e.date %>
+            </li>
+          <% end %>
+      </ul>
+     </li>
+
+     <li class="">
+      <ul class="uk-list uk-list-striped  ">
+            <% @past_events_user.each do |e| %>
+            <li>
+              <%= e.name %> 
+              <span class="uk-text-danger">Past on </span>
+              <%= format_date e.date %>
+            </li>
+            <% end %>
+        </ul>
+      </li>
+
+      <li class="">
+        <ul class="uk-list uk-list-striped  ">
+          <% @events_created.each do |e| %>
+          <li>
+            Created
+            
+            <span class="uk-text-primary"><%= e.name %> </span>
+            <span class="">on </span>
+            <%= format_date e.date %>
+          </li>
+          <% end %>
+        </ul>
+      </li>
+</ul>
+  
+
