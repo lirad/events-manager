@@ -31,7 +31,7 @@ I have built this project to function a working Reddit app which lets you create
 
 1. - [ ] Git clone or download this repo to your machine
 2. - [ ] Inside the `events-manager` folder run `bundle install`
-3. - [ ] Run `rails db:migrate`
+3. - [ ] Run `rails db:create` to create the database
 4. - [ ] Run `rails server`
 5. - [ ] Visit `localhost:3000` to see the application in action
 
