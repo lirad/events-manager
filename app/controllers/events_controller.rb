@@ -5,7 +5,8 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @past_events = Event.past_events
+    @future_events = Event.future_events
   end
 
   # GET /events/1
